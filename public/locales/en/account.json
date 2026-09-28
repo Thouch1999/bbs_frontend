@@ -1,0 +1,113 @@
+{
+  "auth": {
+    "login_title": "Log in",
+    "email": "Email",
+    "password": "Password",
+    "login_with_password": "Log in",
+    "send_code": "Send code",
+    "no_account": "Don't have an account?",
+    "register_link": "Register",
+    "forgot_password_link": "Forgot password?",
+    "book_as_guest": "Continue as guest",
+    "otp_code": "Reset code",
+    "verify": "Verify",
+    "resend_code": "Resend code",
+    "resend_in": "Resend in {{seconds}}s",
+    "register_title": "Create an account",
+    "full_name": "Full name",
+    "register_submit": "Create account",
+    "forgot_password_title": "Reset your password",
+    "new_password": "New password",
+    "reset_submit": "Reset password",
+    "reset_sent": "If that account exists, a reset code was sent.",
+    "back_to_login": "Back to log in"
+  },
+  "my_bookings": {
+    "title": "My bookings",
+    "tab_upcoming": "Upcoming",
+    "tab_past": "Past",
+    "tab_cancelled": "Cancelled",
+    "guest_lookup_title": "Find your booking",
+    "guest_lookup_pnr": "PNR",
+    "guest_lookup_phone": "Phone",
+    "guest_lookup_submit": "Find booking",
+    "empty": "No bookings here yet.",
+    "status_pending_payment": "Awaiting payment",
+    "status_confirmed": "Confirmed",
+    "status_cancelled": "Cancelled",
+    "status_completed": "Completed",
+    "view_ticket": "View ticket",
+    "reschedule": "Reschedule",
+    "cancel": "Cancel"
+  },
+  "detail": {
+    "title": "Booking details",
+    "back": "Back to my bookings"
+  },
+  "cancel_dialog": {
+    "title": "Cancel booking",
+    "amount_paid": "Amount paid",
+    "cancellation_fee": "Cancellation fee",
+    "refund_amount": "Refund amount",
+    "loading_preview": "Calculating your refund...",
+    "reason_optional": "Reason (optional)",
+    "keep_booking": "Keep my booking",
+    "confirm_cancel": "Confirm cancellation"
+  },
+  "reschedule_dialog": {
+    "title": "Reschedule",
+    "pick_date": "Pick a new date",
+    "pick_trip": "Choose a new trip",
+    "no_trips_on_date": "No trips run on this date for this route. Try another date.",
+    "fare_difference": "Fare difference",
+    "reschedule_fee": "Reschedule fee",
+    "total_due": "Total due now",
+    "confirm_reschedule": "Confirm new trip"
+  },
+  "profile": {
+    "title": "Profile",
+    "nav_personal": "Personal information",
+    "nav_saved_passengers": "Saved passengers",
+    "nav_language": "Language & currency",
+    "full_name": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "save": "Save",
+    "saved_ok": "Saved.",
+    "language_currency_title": "Language & currency",
+    "add_passenger": "Add passenger",
+    "edit": "Edit",
+    "delete": "Delete",
+    "no_saved_passengers": "No saved passengers yet."
+  },
+  "support": {
+    "title": "Help & support",
+    "login_needed": "Log in to contact support and follow your requests.",
+    "login": "Log in",
+    "new": "New request",
+    "category": "What's it about?",
+    "categories": {
+      "refund_dispute": "A refund",
+      "payment_failed": "A payment that failed",
+      "trip_complaint": "A problem on my trip",
+      "account": "My account",
+      "other": "Something else"
+    },
+    "booking": "Booking (optional)",
+    "no_booking": "Not about a booking",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "mine": "My requests",
+    "none": "You haven't contacted support yet.",
+    "status": {
+      "open": "Open",
+      "waiting_customer": "Replied",
+      "resolved": "Resolved"
+    },
+    "from_bbms": "BBMS support",
+    "from_you": "You",
+    "reply": "Write a reply…",
+    "help_with_booking": "Need help with this booking?"
+  }
+}

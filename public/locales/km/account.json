@@ -1,0 +1,113 @@
+{
+  "auth": {
+    "login_title": "ចូលគណនី",
+    "email": "អ៊ីមែល",
+    "password": "ពាក្យសម្ងាត់",
+    "login_with_password": "ចូលគណនី",
+    "send_code": "ផ្ញើកូដ",
+    "no_account": "មិនទាន់មានគណនីមែនទេ?",
+    "register_link": "ចុះឈ្មោះ",
+    "forgot_password_link": "ភ្លេចពាក្យសម្ងាត់?",
+    "book_as_guest": "កក់ជាភ្ញៀវ",
+    "otp_code": "កូដកំណត់ឡើងវិញ",
+    "verify": "ផ្ទៀងផ្ទាត់",
+    "resend_code": "ផ្ញើកូដម្តងទៀត",
+    "resend_in": "ផ្ញើម្តងទៀតក្នុង {{seconds}} វិនាទី",
+    "register_title": "បង្កើតគណនី",
+    "full_name": "ឈ្មោះពេញ",
+    "register_submit": "បង្កើតគណនី",
+    "forgot_password_title": "កំណត់ពាក្យសម្ងាត់ឡើងវិញ",
+    "new_password": "ពាក្យសម្ងាត់ថ្មី",
+    "reset_submit": "កំណត់ពាក្យសម្ងាត់ឡើងវិញ",
+    "reset_sent": "ប្រសិនបើគណនីនោះមានពិតមែន កូដកំណត់ឡើងវិញត្រូវបានផ្ញើ។",
+    "back_to_login": "ត្រឡប់ទៅចូលគណនី"
+  },
+  "my_bookings": {
+    "title": "ការកក់របស់ខ្ញុំ",
+    "tab_upcoming": "ដំណើរខាងមុខ",
+    "tab_past": "ប្រវត្តិ",
+    "tab_cancelled": "បានបោះបង់",
+    "guest_lookup_title": "ស្វែងរកការកក់របស់អ្នក",
+    "guest_lookup_pnr": "កូដកក់ (PNR)",
+    "guest_lookup_phone": "លេខទូរស័ព្ទ",
+    "guest_lookup_submit": "ស្វែងរកការកក់",
+    "empty": "មិនទាន់មានការកក់នៅទីនេះទេ។",
+    "status_pending_payment": "រង់ចាំបង់ប្រាក់",
+    "status_confirmed": "បញ្ជាក់រួច",
+    "status_cancelled": "បានបោះបង់",
+    "status_completed": "បានបញ្ចប់",
+    "view_ticket": "មើលសំបុត្រ",
+    "reschedule": "ប្តូរកាលបរិច្ឆេទ",
+    "cancel": "បោះបង់"
+  },
+  "detail": {
+    "title": "ព័ត៌មានលម្អិតការកក់",
+    "back": "ត្រឡប់ទៅការកក់របស់ខ្ញុំ"
+  },
+  "cancel_dialog": {
+    "title": "បោះបង់ការកក់",
+    "amount_paid": "ទឹកប្រាក់បានបង់",
+    "cancellation_fee": "កម្រៃបោះបង់",
+    "refund_amount": "ទឹកប្រាក់សងវិញ",
+    "loading_preview": "កំពុងគណនាទឹកប្រាក់សងវិញ...",
+    "reason_optional": "មូលហេតុ (មិនចាំបាច់)",
+    "keep_booking": "រក្សាទុកការកក់",
+    "confirm_cancel": "បញ្ជាក់ការបោះបង់"
+  },
+  "reschedule_dialog": {
+    "title": "ប្តូរកាលបរិច្ឆេទ",
+    "pick_date": "ជ្រើសរើសកាលបរិច្ឆេទថ្មី",
+    "pick_trip": "ជ្រើសរើសដំណើរថ្មី",
+    "no_trips_on_date": "មិនមានដំណើរណាមួយសម្រាប់ផ្លូវនេះនៅថ្ងៃនេះទេ។ សូមសាកល្បងកាលបរិច្ឆេទផ្សេងទៀត។",
+    "fare_difference": "ភាពខុសគ្នានៃថ្លៃសំបុត្រ",
+    "reschedule_fee": "កម្រៃប្តូរកាលបរិច្ឆេទ",
+    "total_due": "សរុបត្រូវបង់ឥឡូវនេះ",
+    "confirm_reschedule": "បញ្ជាក់ដំណើរថ្មី"
+  },
+  "profile": {
+    "title": "ព័ត៌មានផ្ទាល់ខ្លួន",
+    "nav_personal": "ព័ត៌មានផ្ទាល់ខ្លួន",
+    "nav_saved_passengers": "អ្នកដំណើរដែលបានរក្សាទុក",
+    "nav_language": "ភាសា និងរូបិយប័ណ្ណ",
+    "full_name": "ឈ្មោះពេញ",
+    "email": "អ៊ីមែល",
+    "phone": "លេខទូរស័ព្ទ",
+    "save": "រក្សាទុក",
+    "saved_ok": "បានរក្សាទុក។",
+    "language_currency_title": "ភាសា និងរូបិយប័ណ្ណ",
+    "add_passenger": "បន្ថែមអ្នកដំណើរ",
+    "edit": "កែសម្រួល",
+    "delete": "លុប",
+    "no_saved_passengers": "មិនទាន់មានអ្នកដំណើរដែលបានរក្សាទុកទេ។"
+  },
+  "support": {
+    "title": "ជំនួយ",
+    "login_needed": "សូមចូលគណនី ដើម្បីទាក់ទងផ្នែកជំនួយ និងតាមដានសំណើរបស់អ្នក។",
+    "login": "ចូលគណនី",
+    "new": "សំណើថ្មី",
+    "category": "តើវាទាក់ទងនឹងអ្វី?",
+    "categories": {
+      "refund_dispute": "ការសងប្រាក់",
+      "payment_failed": "ការបង់ប្រាក់ដែលបរាជ័យ",
+      "trip_complaint": "បញ្ហាក្នុងដំណើររបស់ខ្ញុំ",
+      "account": "គណនីរបស់ខ្ញុំ",
+      "other": "ផ្សេងទៀត"
+    },
+    "booking": "ការកក់ (ស្រេចចិត្ត)",
+    "no_booking": "មិនទាក់ទងនឹងការកក់",
+    "subject": "ប្រធានបទ",
+    "message": "សារ",
+    "send": "ផ្ញើ",
+    "mine": "សំណើរបស់ខ្ញុំ",
+    "none": "អ្នកមិនទាន់បានទាក់ទងផ្នែកជំនួយទេ។",
+    "status": {
+      "open": "បើក",
+      "waiting_customer": "បានឆ្លើយតប",
+      "resolved": "បានដោះស្រាយ"
+    },
+    "from_bbms": "ផ្នែកជំនួយ BBMS",
+    "from_you": "អ្នក",
+    "reply": "សរសេរចម្លើយ…",
+    "help_with_booking": "ត្រូវការជំនួយសម្រាប់ការកក់នេះ?"
+  }
+}

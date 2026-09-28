@@ -1,0 +1,68 @@
+{
+  "title": "Ticket validation",
+  "loading": "Loading…",
+  "back_to_site": "Back to the website",
+  "change_trip": "Choose another trip",
+  "dismiss": "Dismiss",
+  "forbidden": "This account isn't allowed to validate tickets. Ask your manager to turn on “Can scan tickets”.",
+  "cached_at": "Passenger list saved on this device at {{time}}",
+  "progress": "Boarded {{boarded}}/{{total}}",
+  "pick": {
+    "title": "Today's trips ({{date}})",
+    "none": "No trips today — or none saved on this device yet. Connect once to download them.",
+    "sold": "{{sold}}/{{total}} seats sold"
+  },
+  "offline": {
+    "title": "No internet connection",
+    "body_one": "Scanning still works. {{count}} scan is saved on this device and will upload automatically.",
+    "body_other": "Scanning still works. {{count}} scans are saved on this device and will upload automatically."
+  },
+  "sync": {
+    "synced": "Synced",
+    "pending_one": "{{count}} to upload",
+    "pending_other": "{{count}} to upload",
+    "offline_one": "Offline — {{count}} saved",
+    "offline_other": "Offline — {{count}} saved",
+    "last": "Last synced {{time}}",
+    "rejected_one": "{{count}} saved scan was refused by the server (the booking changed). Check the list.",
+    "rejected_other": "{{count}} saved scans were refused by the server (bookings changed). Check the list."
+  },
+  "mode": { "scan": "Scan", "list": "Passenger list" },
+  "scan": {
+    "instruction": "Scan the QR code on the ticket",
+    "pnr_placeholder": "Enter PNR by hand",
+    "check": "Check",
+    "camera_insecure": "The camera only works over a secure (https) connection. Type the PNR below instead.",
+    "camera_error": "Can't open the camera. Allow camera access, or type the PNR below."
+  },
+  "list": {
+    "search": "Search name, PNR or seat",
+    "filter": { "all": "All", "waiting": "Not boarded", "boarded": "Boarded", "no_show": "No-show" },
+    "empty": "No passengers match.",
+    "board": "Board",
+    "no_show": "No-show",
+    "pending_sync": "Waiting to upload"
+  },
+  "status": { "boarded": "Boarded" },
+  "result": {
+    "valid": "Valid ticket",
+    "already": "Already scanned",
+    "invalid": "Invalid ticket",
+    "boarding_point": "Boards at: {{stop}}",
+    "saved_offline": "Saved on this device — uploads when back online",
+    "first_scan": "First scanned at {{time}}",
+    "next": "Next passenger",
+    "scan_again": "Scan again",
+    "call_office": "Call the office"
+  },
+  "reason": {
+    "wrong_trip": "This ticket is for a different trip.",
+    "booking_not_confirmed": "This booking is cancelled or not paid.",
+    "booking_not_found": "No booking with this PNR.",
+    "qr_invalid": "This QR code is not a valid ticket (or it has expired).",
+    "not_a_ticket": "This QR code is not a BBMS ticket.",
+    "not_on_this_trip": "Not on this trip's passenger list — wrong trip, cancelled, or not paid.",
+    "tampered": "This ticket doesn't match our records — it may have been altered.",
+    "unknown": "This ticket can't be accepted."
+  }
+}

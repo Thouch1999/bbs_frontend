@@ -1,0 +1,87 @@
+{
+  "header": {
+    "toggle_menu": "Toggle menu",
+    "currency": "Currency",
+    "notifications_one": "{{count}} item needs attention",
+    "notifications_other": "{{count}} items need attention",
+    "profile": "My profile",
+    "passenger_site": "Passenger website",
+    "logout": "Log out"
+  },
+  "sidebar": { "search": "Search menu" },
+  "footer": { "rights": "All rights reserved." },
+  "more_info": "More info",
+  "actions": {
+    "add": "Add",
+    "cancel": "Cancel",
+    "choose": "— Choose —",
+    "close": "Close",
+    "delete": "Delete",
+    "remove": "Remove",
+    "save": "Save"
+  },
+  "table": {
+    "show": "Show",
+    "entries": "entries",
+    "search": "Search…",
+    "loading": "Loading…",
+    "empty": "No records to show.",
+    "select_all": "Select all rows on this page",
+    "select_row": "Select row",
+    "selected_one": "{{count}} selected",
+    "selected_other": "{{count}} selected",
+    "clear_selection": "Clear selection",
+    "showing": "Showing {{first}} to {{last}} of {{total}}"
+  },
+  "status": {
+    "scheduled": "Scheduled",
+    "delayed": "Delayed",
+    "cancelled": "Cancelled",
+    "departed": "Departed",
+    "completed": "Completed",
+    "confirmed": "Confirmed",
+    "pending_payment": "Pending payment",
+    "active": "Active",
+    "maintenance": "Maintenance",
+    "retired": "Retired",
+    "paid": "Paid",
+    "pay_at_counter": "Pay at counter",
+    "pending": "Pending",
+    "boarded": "Boarded",
+    "no_show": "No-show"
+  },
+  "staff_role": {
+    "owner": "Owner",
+    "manager": "Manager",
+    "counter_agent": "Counter agent",
+    "conductor": "Conductor"
+  },
+  "operator_status": {
+    "pending": "pending approval",
+    "approved": "approved",
+    "rejected": "rejected",
+    "suspended": "suspended"
+  },
+  "admin_nav": {
+    "overview": "Overview",
+    "operators": "Operator approval",
+    "users": "Users",
+    "reports": "Reports",
+    "reconciliation": "Reconciliation",
+    "content": "Content",
+    "support": "Support",
+    "role": "Administrator"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "in_use": "This record is still used by trips or bookings, so it can't be deleted.",
+    "bus_conflict": "This bus is already scheduled at an overlapping time.",
+    "seat_layout_in_use": "Trips already use this layout, so its seats can't change. Save it as a new layout instead.",
+    "trip_locked": "Someone else is booking this trip right now — try again in a moment.",
+    "seats_unavailable": "One or more of those seats were just taken. Pick other seats.",
+    "trip_not_bookable": "This trip can no longer be booked.",
+    "phone_already_registered": "An account with this phone number already exists.",
+    "protected_staff_member": "This staff member can't be changed from here.",
+    "network_error": "Can't reach the server. Check the connection and try again."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "app_name": "BBMS — Bus Ticket Booking",
+  "nav": {
+    "home": "Home",
+    "my_bookings": "My bookings",
+    "profile": "Profile",
+    "login": "Log in",
+    "logout": "Log out",
+    "help": "Help"
+  },
+  "search": {
+    "origin": "From",
+    "destination": "To",
+    "date": "Date",
+    "passengers": "Passengers",
+    "submit": "Search"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "retry": "Retry"
+  },
+  "footer": {
+    "tagline": "Book intercity bus tickets across Cambodia, in Khmer or English.",
+    "help_cta": "24/7 help on Telegram",
+    "help_cta_body": "Our support team is on hand to answer questions and help with your booking.",
+    "telegram_handle": "@bbmscambodia",
+    "contact_support": "Contact support",
+    "links_title": "Explore",
+    "link_home": "Search buses",
+    "link_my_bookings": "My bookings",
+    "payment_title": "Payment methods",
+    "rights": "All rights reserved."
+  },
+  "home": {
+    "badge": "Bus routes across all 25 provinces and cities",
+    "headline": "Book bus tickets across Cambodia",
+    "subtitle": "Compare fares, check departure schedules, and reserve your preferred seat — with leading bus operators.",
+    "benefit_operators_title": "Many operators",
+    "benefit_operators_body": "Choose from trusted operators, including VIP sleeper and express classes.",
+    "benefit_payment_title": "Easy payment",
+    "benefit_payment_body": "Pay with ABA PayWay, Wing, or ACLEDA — or in cash at the counter.",
+    "benefit_ticket_title": "Instant e-ticket",
+    "benefit_ticket_body": "Your ticket is sent immediately by SMS, email, and Telegram — no printing needed.",
+    "popular_routes_title": "Popular routes and schedules",
+    "popular_routes_subtitle": "Real upcoming departures from our operators",
+    "price_from": "From",
+    "view_schedule": "View schedule",
+    "trips_count_one": "{{count}} trip",
+    "trips_count_other": "{{count}} trips",
+    "operators_title": "Trusted operator partners",
+    "operators_subtitle": "Working with reliable, verified bus operators"
+  }
+}

@@ -1,0 +1,21 @@
+// BBMS-only design tokens that Bootstrap has no variable for — CLAUDE.md
+// "Locked decisions" palette. The tokens that DO map to a Bootstrap
+// variable ($primary, $success, etc.) are passed via `@use ... with (...)`
+// in main.scss instead: plain `@use`-scoped variables can't override
+// another module's `!default` values, only `with (...)` can.
+$bbms-dark: #08414c;
+$bbms-tint: #e6f2f4;
+$bbms-orange: #f58220;
+$bbms-orange-hover: #d96d12;
+$bbms-gold: #f2b233;
+$bbms-page: #f5f7f9;
+$bbms-border: #e2e8ec;
+$bbms-text: #14212b;
+$bbms-text-muted: #5c6b78;
+$bbms-text-subtle: #9aa7b2;
+
+// Shape/elevation scale (docs/DESIGN.md "Shapes"/"Elevation & Depth" — the
+// button/card/modal radii already flow through main.scss's Bootstrap
+// `with (...)` map; these cover values Bootstrap has no variable for).
+$bbms-radius-sm: 0.5rem; // 8px — chips, small controls, seat map nodes
+$bbms-shadow-level2: 0 4px 12px rgba(20, 33, 43, 0.08); // dropdowns, popovers, date pickers

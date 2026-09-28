@@ -1,0 +1,252 @@
+@use "variables" as vars;
+
+// Bootstrap 5's Sass module system only lets `@use ... with (...)` override
+// another module's `!default` variables — plain sibling `@use` variables
+// (the old @import-order trick) are silently ignored, so every CLAUDE.md
+// palette/typography override that has a Bootstrap equivalent must go here.
+@use "bootstrap/scss/bootstrap" with (
+  $primary: #0d5f6e,
+  $success: #16a34a,
+  $danger: #dc2626,
+  $warning: #f59e0b,
+  $border-radius: 0.625rem,
+  // 10px buttons/inputs
+  $border-radius-lg: 0.75rem,
+  // 12px cards
+  $border-radius-xl: 1rem,
+  // 16px modals
+  $font-family-sans-serif: (
+    "Kantumruy Pro",
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif
+  ),
+  $body-bg: #f5f7f9,
+  $body-color: #14212b,
+  $border-color: #e2e8ec,
+  // Badges/status chips/route pills: full pill geometry, not the 10px
+  // button radius.
+  $badge-border-radius: 50rem,
+  // Modal overlay backdrop: #14212B at 45% opacity (DESIGN.md "Level 3").
+  $modal-backdrop-bg: #14212b,
+  $modal-backdrop-opacity: 0.45
+);
+
+// Self-hosted fonts (CLAUDE.md: "never loaded from a CDN").
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("/fonts/KantumruyPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("/fonts/KantumruyPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Inter is shipped as Google's variable font — a single file whose wght
+// axis covers the whole 100-900 range, so one @font-face with a weight
+// range replaces separate static-weight files.
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Variable.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Locked decision: km 17px/1.7, en 16px/1.5 — the UI shows one language at
+// a time (html[lang] tracks LocaleContext), so these scope cleanly.
+html[lang="km"] body {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+html[lang="en"] body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+// DESIGN.md "Elevation & Depth": every interactive boundary gets a dedicated
+// focus ring, distinct from Bootstrap's default blue focus box-shadow.
+:focus-visible {
+  outline: 2px solid vars.$bbms-orange;
+  outline-offset: 2px;
+}
+
+// Level 2 (dropdowns, popovers, date pickers): flat borders elsewhere, but
+// these float above the page and get a soft grounding shadow.
+.dropdown-menu {
+  box-shadow: vars.$bbms-shadow-level2;
+}
+
+// Generic brand-tint utility (also used by ModalShell's icon badge in both
+// the passenger and back-office bundles) — the single source of truth;
+// adminlte.scss reuses this instead of redefining it.
+.bg-bbms-tint {
+  background-color: vars.$bbms-tint !important;
+}
+
+.text-bbms-orange {
+  color: vars.$bbms-orange !important;
+}
+
+.bbms-cta {
+  background-color: vars.$bbms-orange;
+  border-color: vars.$bbms-orange;
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: vars.$bbms-orange-hover;
+    border-color: vars.$bbms-orange-hover;
+  }
+}
+
+// Seat map — touch-friendly targets, color-coded per SeatLegend.
+.bbms-seat-swatch {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid vars.$bbms-border;
+}
+
+.bbms-seat-swatch-available {
+  background-color: #fff;
+}
+
+.bbms-seat-swatch-selected {
+  background-color: #0d5f6e;
+  border-color: #0d5f6e;
+}
+
+.bbms-seat-swatch-held {
+  background-color: vars.$bbms-gold;
+  border-color: vars.$bbms-gold;
+}
+
+.bbms-seat-swatch-booked {
+  background-color: vars.$bbms-text-subtle;
+  border-color: vars.$bbms-text-subtle;
+}
+
+.bbms-seat-swatch-female {
+  background-color: #fff;
+  border: 2px solid #f58220;
+}
+
+.bbms-seat-map {
+  display: grid;
+  grid-template-columns: repeat(var(--bbms-seat-cols, 4), minmax(2.75rem, 1fr));
+  gap: 0.5rem;
+  max-width: 24rem;
+}
+
+.bbms-seat-button {
+  aspect-ratio: 1;
+  min-height: 2.75rem; // touch target
+  border-radius: vars.$bbms-radius-sm; // 8px seat map nodes (DESIGN.md "Shapes")
+  border: 1px solid vars.$bbms-border;
+  background-color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  position: relative;
+
+  &.is-selected {
+    background-color: #0d5f6e;
+    border-color: #0d5f6e;
+    color: #fff;
+  }
+
+  &.is-held,
+  &.is-booked {
+    background-color: vars.$bbms-text-subtle;
+    border-color: vars.$bbms-text-subtle;
+    color: #fff;
+    cursor: not-allowed;
+  }
+
+  &.is-held {
+    background-color: vars.$bbms-gold;
+    border-color: vars.$bbms-gold;
+    color: #14212b;
+  }
+
+  &.is-female-only:not(.is-selected):not(.is-booked):not(.is-held) {
+    border: 2px solid #f58220;
+  }
+}
+
+.bbms-ticket-stub {
+  border-right: 2px dashed vars.$bbms-border;
+}
+
+// Booking flow stepper (search -> seats -> stops -> passengers -> payment).
+.bbms-stepper-node {
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  font-size: 0.8rem;
+  border: 1px solid vars.$bbms-border;
+  background-color: #fff;
+  color: vars.$bbms-text-muted;
+}
+
+.bbms-stepper-node-done,
+.bbms-stepper-node-active {
+  background-color: #0d5f6e;
+  border-color: #0d5f6e;
+  color: #fff;
+}
+
+.bbms-stepper-node-active {
+  box-shadow: 0 0 0 4px vars.$bbms-tint;
+}
+
+.bbms-stepper-line {
+  width: 2rem;
+  height: 1px;
+  background-color: vars.$bbms-border;
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+// TripCard's price column only gets a divider once it sits beside the
+// schedule column (md+); stacked on mobile it would just be a stray line.
+.bbms-card-divider {
+  @media (min-width: 768px) {
+    border-left: 1px solid vars.$bbms-border;
+  }
+}
+
+@media print {
+  .bbms-no-print {
+    display: none !important;
+  }
+}
+
+// SiteContent's BannerCard: an uploaded image fills the card, with a bottom
+// gradient scrim so the title/body stay legible over any photo.
+.bbms-site-banner-image {
+  min-height: 140px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20, 33, 43, 0.1), rgba(20, 33, 43, 0.7));
+  }
+}

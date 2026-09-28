@@ -1,0 +1,263 @@
+// S2 conductor screen: a phone/tablet at a bus door, often in direct
+// sunlight — high-contrast solid fills, big type, 48px+ touch targets, and an
+// offline state nobody can miss. Only the conductor page imports this.
+@use "variables" as vars;
+
+$teal: #0d5f6e;
+$amber: #f59e0b;
+$green: #16a34a;
+$red: #dc2626;
+
+.bbms-conductor {
+  min-height: 100vh;
+  background-color: vars.$bbms-page;
+  font-size: 1.05rem;
+
+  .btn {
+    min-height: 48px;
+  }
+}
+
+.bbms-conductor-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  background-color: $teal;
+  color: #fff;
+  min-height: 60px;
+}
+
+.bbms-sync-chip {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  min-height: 40px;
+  white-space: nowrap;
+
+  &.is-ok {
+    background-color: $green;
+    color: #fff;
+  }
+
+  &.is-pending {
+    background-color: vars.$bbms-gold;
+    color: vars.$bbms-text;
+  }
+
+  &.is-offline {
+    background-color: $amber;
+    color: #1f1300;
+  }
+}
+
+// Impossible to miss (playbook Done-when): full-width, solid amber, icon,
+// pinned under the top bar.
+.bbms-offline-banner {
+  position: sticky;
+  top: 60px;
+  z-index: 19;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: repeating-linear-gradient(-45deg, $amber, $amber 14px, #fbbf24 14px, #fbbf24 28px);
+  color: #1f1300;
+  font-size: 1.05rem;
+  border-bottom: 3px solid #b45309;
+}
+
+.bbms-board-progress {
+  height: 14px;
+  border-radius: 999px;
+}
+
+.bbms-segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
+  border: 2px solid $teal;
+  border-radius: 0.75rem;
+  overflow: hidden;
+
+  button {
+    border: 0;
+    min-height: 56px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    background: transparent;
+    color: $teal;
+
+    &.active {
+      background-color: $teal;
+      color: #fff;
+    }
+  }
+}
+
+.bbms-scan-viewport {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background-color: #0b1a20;
+
+  .bbms-scan-video,
+  .bbms-scan-video video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+}
+
+.bbms-scan-corner {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border: 6px solid vars.$bbms-orange;
+  pointer-events: none;
+
+  &.tl { top: 14%; left: 14%; border-right: 0; border-bottom: 0; border-top-left-radius: 12px; }
+  &.tr { top: 14%; right: 14%; border-left: 0; border-bottom: 0; border-top-right-radius: 12px; }
+  &.bl { bottom: 14%; left: 14%; border-right: 0; border-top: 0; border-bottom-left-radius: 12px; }
+  &.br { bottom: 14%; right: 14%; border-left: 0; border-top: 0; border-bottom-right-radius: 12px; }
+}
+
+.bbms-scan-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.bbms-chip {
+  border: 2px solid $teal;
+  color: $teal;
+  background-color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.35rem 1rem;
+
+  &.active {
+    background-color: $teal;
+    color: #fff;
+  }
+}
+
+.bbms-pax-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 64px;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: #fff;
+  border: 1px solid vars.$bbms-border;
+  border-radius: 0.75rem;
+}
+
+.bbms-seat-pill {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  height: 44px;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  background-color: $teal;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+
+  &.is-large {
+    min-width: 72px;
+    height: 60px;
+    font-size: 1.6rem;
+    background-color: #fff;
+    color: vars.$bbms-text;
+  }
+}
+
+.bbms-pending-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 0.4rem;
+  border-radius: 50%;
+  background-color: $amber;
+  vertical-align: middle;
+}
+
+.bbms-trip-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  min-height: 72px;
+  padding: 0.75rem 1rem;
+  border: 2px solid vars.$bbms-border;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  color: vars.$bbms-text;
+
+  .bbms-trip-time {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: $teal;
+  }
+}
+
+// Full-screen result: the colour alone is readable from a metre away,
+// the icon + heading carry it for colour-blind conductors.
+.bbms-result {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  color: #fff;
+
+  &.is-valid { background-color: $green; }
+  &.is-already { background-color: $amber; color: #1f1300; }
+  &.is-invalid { background-color: $red; }
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0.5rem 0;
+  }
+}
+
+.bbms-result-card {
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
+.bbms-result-icon {
+  font-size: 6rem;
+}
+
+.bbms-result-note {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
