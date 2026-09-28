@@ -2,6 +2,7 @@
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import type {
+  AdminCity,
   AdminOperator,
   AdminOverview,
   AdminPaymentDetail,
@@ -36,6 +37,7 @@ const keys = {
   payments: ["admin", "payments"] as const,
   payouts: ["admin", "payouts"] as const,
   promos: ["admin", "promo-codes"] as const,
+  cities: ["admin", "cities"] as const,
   banners: ["admin", "banners"] as const,
   announcements: ["admin", "announcements"] as const,
   tickets: ["admin", "tickets"] as const,
@@ -257,6 +259,7 @@ function crud<T extends { public_id: string }>(queryKey: readonly string[], path
   };
 }
 
+export const cityApi = crud<AdminCity>(keys.cities, "/admin/cities/");
 export const bannerApi = crud<Banner>(keys.banners, "/admin/banners/");
 
 export function useUploadBannerImage() {

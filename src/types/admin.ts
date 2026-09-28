@@ -217,6 +217,14 @@ export interface AdminPromoCode {
   created_at: string;
 }
 
+export interface AdminCity {
+  public_id: string;
+  name_en: string;
+  name_km: string;
+  country_code: string;
+  is_active: boolean;
+}
+
 export interface Banner {
   public_id: string;
   title_km: string;

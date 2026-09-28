@@ -67,6 +67,9 @@ const ReconciliationPage = lazy(() =>
 const ContentPage = lazy(() =>
   import("../pages/admin/ContentPage").then((m) => ({ default: m.ContentPage }))
 );
+const CitiesPage = lazy(() =>
+  import("../pages/admin/CitiesPage").then((m) => ({ default: m.CitiesPage }))
+);
 const SupportPage = lazy(() =>
   import("../pages/admin/SupportPage").then((m) => ({ default: m.SupportPage }))
 );
@@ -163,6 +166,7 @@ export function AppRoutes() {
               <Route path="users" element={<UsersPage />} />
               <Route path="reports" element={<PlatformReportsPage />} />
               <Route path="reconciliation" element={<ReconciliationPage />} />
+              <Route path="cities" element={<CitiesPage />} />
               <Route path="content" element={<ContentPage />} />
               <Route path="support" element={<SupportPage />} />
               <Route path="audit" element={<AuditLogPage />} />

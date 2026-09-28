@@ -19,6 +19,7 @@ export function AdminLayout() {
     { header: t("admin:nav.header_marketplace") },
     { to: "/admin/operators", label: t("admin:nav.operators"), icon: "fas fa-building", badge: pending },
     { to: "/admin/users", label: t("admin:nav.users"), icon: "fas fa-users" },
+    { to: "/admin/cities", label: t("admin:nav.cities"), icon: "fas fa-city" },
     { header: t("admin:nav.header_money") },
     { to: "/admin/reconciliation", label: t("admin:nav.reconciliation"), icon: "fas fa-balance-scale" },
     { to: "/admin/reports", label: t("admin:nav.reports"), icon: "fas fa-chart-line" },

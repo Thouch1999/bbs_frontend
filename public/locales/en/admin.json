@@ -4,6 +4,7 @@
     "header_marketplace": "Marketplace",
     "operators": "Operators",
     "users": "Users",
+    "cities": "Cities",
     "header_money": "Payments",
     "reconciliation": "Reconciliation",
     "reports": "Platform reports",
@@ -123,6 +124,15 @@
     "rejected": "Application rejected.",
     "suspended": "Operator suspended.",
     "reinstated": "Operator reinstated."
+  },
+  "cities": {
+    "title": "Cities",
+    "create": "Add city",
+    "edit": "Edit city",
+    "empty": "No cities yet.",
+    "name_en": "Name (English)",
+    "name_km": "Name (Khmer)",
+    "country": "Country"
   },
   "users": {
     "title": "Users",
