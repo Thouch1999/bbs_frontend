@@ -116,9 +116,6 @@ export function AppRoutes() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
             <Route path="/search" element={<SearchResultsPage />} />
-            <Route path="/trips/:tripId/seats" element={<SeatSelectionPage />} />
-            <Route path="/boarding-stops" element={<BoardingStopsPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/payment-result" element={<PaymentResultPage />} />
             <Route path="/ticket" element={<TicketPage />} />
             {/* Public: MyBookingsPage renders its own guest PNR+phone lookup
@@ -128,6 +125,12 @@ export function AppRoutes() {
             <Route
               element={<ProtectedRoute allow={["passenger", "operator_staff", "admin"]} />}
             >
+              {/* Booking (ad hoc, per direct request) now requires an
+                  account end to end — seat hold through checkout. Search
+                  stays public so browsing doesn't need login. */}
+              <Route path="/trips/:tripId/seats" element={<SeatSelectionPage />} />
+              <Route path="/boarding-stops" element={<BoardingStopsPage />} />
+              <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/bookings/:publicId" element={<BookingDetailPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/support" element={<PassengerSupportPage />} />

@@ -139,6 +139,7 @@
     "wing": "Wing",
     "acleda": "ACLEDA",
     "mock": "Online payment (demo gateway)",
+    "demo": "Demo payment (instant, no real charge)",
     "counter": "Pay at counter",
     "pay_now": "Pay now",
     "not_available": "Not available yet",

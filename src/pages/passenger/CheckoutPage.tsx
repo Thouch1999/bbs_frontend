@@ -64,7 +64,7 @@ export function CheckoutPage() {
   const initiatePayment = useInitiatePayment();
   const createSavedPassenger = useCreateSavedPassenger();
 
-  const [paymentProvider, setPaymentProvider] = useState<PaymentProvider>("counter");
+  const [paymentProvider, setPaymentProvider] = useState<PaymentProvider>("demo");
   const [discountAmount, setDiscountAmount] = useState(0);
   const [promoCode, setPromoCode] = useState<string | null>(null);
 

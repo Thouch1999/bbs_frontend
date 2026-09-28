@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 import { useAuth, type AppRole } from "../context/AuthContext";
 
@@ -14,13 +14,17 @@ interface ProtectedRouteProps {
  */
 export function ProtectedRoute({ allow }: ProtectedRouteProps) {
   const { isAuthenticated, isInitializing, role } = useAuth();
+  const location = useLocation();
 
   if (isInitializing) {
     return null;
   }
 
   if (!isAuthenticated || !role || !allow.includes(role)) {
-    return <Navigate to="/login" replace />;
+    // Carries the page the visitor actually wanted (e.g. mid seat-selection
+    // or checkout) so LoginPage/RegisterPage can send them back there
+    // instead of always landing on the generic post-login page.
+    return <Navigate to="/login" replace state={{ from: `${location.pathname}${location.search}` }} />;
   }
 
   return <Outlet />;

@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { z } from "zod";
 
 import { useRegister } from "../../api/auth";
@@ -17,7 +17,9 @@ type RegisterValues = z.infer<typeof registerSchema>;
 export function RegisterPage() {
   const { t } = useTranslation(["account", "common"]);
   const navigate = useNavigate();
+  const location = useLocation();
   const { login } = useAuth();
+  const from = (location.state as { from?: string } | null)?.from;
   const form = useForm<RegisterValues>({ resolver: zodResolver(registerSchema) });
   const registerMutation = useRegister();
 
@@ -25,7 +27,9 @@ export function RegisterPage() {
     registerMutation.mutate(values, {
       onSuccess: (tokens) => {
         login(tokens);
-        navigate("/profile", { replace: true });
+        // Sends the visitor back to the booking step they were redirected
+        // away from (seats/checkout), same as LoginPage.
+        navigate(from ?? "/profile", { replace: true });
       },
     });
   }
@@ -35,6 +39,7 @@ export function RegisterPage() {
       <div className="card" style={{ maxWidth: "480px", width: "100%" }}>
         <div className="card-body">
           <h1 className="h4 text-center mb-4">{t("auth.register_title")}</h1>
+          {from && <div className="alert alert-info small">{t("auth.login_required_to_book")}</div>}
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="mb-3">
               <label className="form-label">{t("auth.full_name")}</label>
@@ -65,7 +70,7 @@ export function RegisterPage() {
             </button>
           </form>
           <div className="text-center mt-3">
-            <Link to="/login">{t("auth.back_to_login")}</Link>
+            <Link to="/login" state={from ? { from } : undefined}>{t("auth.back_to_login")}</Link>
           </div>
         </div>
       </div>

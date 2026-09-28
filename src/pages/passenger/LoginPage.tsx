@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { z } from "zod";
 
 import { useLogin } from "../../api/auth";
@@ -23,7 +23,9 @@ function landingFor(access: string): string {
 export function LoginPage() {
   const { t } = useTranslation(["account", "common"]);
   const navigate = useNavigate();
+  const location = useLocation();
   const { login } = useAuth();
+  const from = (location.state as { from?: string } | null)?.from;
 
   const passwordForm = useForm<PasswordLoginValues>({ resolver: zodResolver(passwordLoginSchema) });
   const loginMutation = useLogin();
@@ -32,7 +34,12 @@ export function LoginPage() {
     loginMutation.mutate(values, {
       onSuccess: (tokens) => {
         login(tokens);
-        navigate(landingFor(tokens.access), { replace: true });
+        // Sends the visitor back to the booking step they were redirected
+        // away from (seats/checkout) rather than always the generic
+        // post-login page — only for passengers; staff always land in
+        // their own back office regardless of how they got to /login.
+        const role = landingFor(tokens.access);
+        navigate(from && role === "/my-bookings" ? from : role, { replace: true });
       },
     });
   }
@@ -42,6 +49,8 @@ export function LoginPage() {
       <div className="card" style={{ maxWidth: "480px", width: "100%" }}>
         <div className="card-body">
           <h1 className="h4 text-center mb-4">{t("auth.login_title")}</h1>
+
+          {from && <div className="alert alert-info small">{t("auth.login_required_to_book")}</div>}
 
           <form onSubmit={passwordForm.handleSubmit(onPasswordSubmit)}>
             <div className="mb-3">
@@ -63,12 +72,9 @@ export function LoginPage() {
           <hr />
           <div className="d-flex justify-content-between small">
             <span>
-              {t("auth.no_account")} <Link to="/register">{t("auth.register_link")}</Link>
+              {t("auth.no_account")} <Link to="/register" state={from ? { from } : undefined}>{t("auth.register_link")}</Link>
             </span>
             <Link to="/forgot-password">{t("auth.forgot_password_link")}</Link>
-          </div>
-          <div className="text-center mt-3">
-            <Link to="/">{t("auth.book_as_guest")}</Link>
           </div>
         </div>
       </div>

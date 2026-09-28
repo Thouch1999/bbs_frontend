@@ -12,9 +12,10 @@ const PROVIDER_ICON: Record<PaymentProvider, { icon: string; color: string }> = 
   acleda: { icon: "fas fa-building-columns", color: "#1baf7a" },
   counter: { icon: "fas fa-store", color: "#eda100" },
   mock: { icon: "fas fa-mobile-screen", color: "#e87ba4" },
+  demo: { icon: "fas fa-mobile-screen", color: "#e87ba4" },
 };
 
-const AVAILABLE: PaymentProvider[] = ["mock", "counter"];
+const AVAILABLE: PaymentProvider[] = ["demo", "counter"];
 const NOT_YET_WIRED: PaymentProvider[] = ["aba_payway", "wing", "acleda"];
 
 interface PaymentMethodSelectProps {

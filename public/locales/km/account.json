@@ -8,7 +8,7 @@
     "no_account": "មិនទាន់មានគណនីមែនទេ?",
     "register_link": "ចុះឈ្មោះ",
     "forgot_password_link": "ភ្លេចពាក្យសម្ងាត់?",
-    "book_as_guest": "កក់ជាភ្ញៀវ",
+    "login_required_to_book": "សូមចូល ឬបង្កើតគណនីដើម្បីកក់ការធ្វើដំណើរ។",
     "otp_code": "កូដកំណត់ឡើងវិញ",
     "verify": "ផ្ទៀងផ្ទាត់",
     "resend_code": "ផ្ញើកូដម្តងទៀត",

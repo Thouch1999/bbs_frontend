@@ -156,7 +156,7 @@ export interface Booking {
   created_at: string;
 }
 
-export type PaymentProvider = "aba_payway" | "wing" | "acleda" | "counter" | "mock";
+export type PaymentProvider = "aba_payway" | "wing" | "acleda" | "counter" | "mock" | "demo";
 export type PaymentStatus = "pending" | "succeeded" | "failed";
 
 export interface Payment {
